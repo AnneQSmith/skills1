@@ -32,6 +32,11 @@ def test_smallest():
     out = skills1.smallest(a)
     assert out == 0
 
+def test_largest():
+    a = range(5)
+    out = skills1.largest(a)
+    assert out == 4
+
 
 
 
