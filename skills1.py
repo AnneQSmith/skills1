@@ -17,15 +17,6 @@ def all_odd(some_list):
 
     return new_list
 
-a = ['1','2','2','3',4,5,6,7,8,9,'qowieur','qiwer']
-print a
-a = all_odd(a) 
-print a
-
-
-
-#print all_odd(a)
-
 
 
 # Write a function that takes a list and returns a new list with only the even numbers.
@@ -45,19 +36,45 @@ def all_even(some_list):
 
     return new_list
 
-
-b = ['1','2','2','3',4,5,6,7,8,9,'qowieur','qiwer']
-print b
-b = all_even(b) 
-print b
-
 # Write a function that takes a list of strings and a new list with all strings of length 4 or greater.
 def long_words(word_list):
-    return []
+    
+    new_list = []
+    for i in range(len(word_list)):
+        
+        if type(word_list[i]) == str:
+            if len(word_list[i]) >= 4:
+                new_list.append(word_list[i])
+
+    return new_list
+
+
+c = ['1','2','2','3',4,5,6,7,8,9,'qowieur','qiwer',"wer","were"]
+print c
+c = long_words(c)
+print c
 
 # Write a function that finds the smallest element in a list of integers and returns it.
 def smallest(some_list):
-    return None
+       
+    firstvalidnumber = None
+    smallnumber = None
+    for i in range(len(some_list)):
+        if type(some_list[i]) == int:
+            if firstvalidnumber == None:
+                smallnumber = firstvalidnumber = some_list[i]
+            if some_list[i] < smallnumber:
+                smallnumber = some_list[i]
+
+    return smallnumber
+
+c = ['1','2','2','3',4,5,6,7,8,9,'qowieur','qiwer',"wer","were",-999,-999999999]
+cc = [ "1","WERE",.93939]
+print "before and after smallest"
+print c
+print smallest(c)
+print cc
+print smallest(cc)
 
 # Write a function that finds the largest element in a list of integers and returns it.
 def largest(some_list):
